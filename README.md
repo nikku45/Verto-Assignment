@@ -63,7 +63,7 @@ tests/
 ## Assumptions & Choices
 - Used `better-sqlite3` for simplicity and sync operations.
 - In tests, DB runs in-memory; prod/dev uses a file under `data/`.
-- Minimal CSS inline in `index.html` for speed. You can extend `public/styles.css` if desired.
+
 
 ## How to Use
 - Add employees via the form.
