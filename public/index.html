@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Manager</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script defer src="app.js"></script>
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="CRUD app to manage employees" />
+  
+  <link rel="icon" href="data:,">
+  <!-- Minimal inline CSS for brevity; styles.css left for extension -->
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Employee Manager</h1>
+      <div class="toolbar panel">
+        <input id="search" placeholder="Search by name..." aria-label="Search employees by name" />
+        <button id="refresh">Refresh</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="panel">
+        <h2 class="muted" style="margin-top:0">Add Employee</h2>
+        <form id="create-form">
+          <div style="margin-bottom:10px">
+            <label for="name">Name</label>
+            <input id="name" name="name" required />
+            <div class="error" id="name-error"></div>
+          </div>
+          <div style="margin-bottom:10px">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+            <div class="error" id="email-error"></div>
+          </div>
+          <div style="margin-bottom:10px">
+            <label for="position">Position</label>
+            <input id="position" name="position" required />
+            <div class="error" id="position-error"></div>
+          </div>
+          <button class="primary" type="submit">Add</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+          <h2 class="muted" style="margin:0">Employees</h2>
+          <span id="count" class="muted"></span>
+        </div>
+        <div style="overflow:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Position</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div id="edit-backdrop" class="modal-backdrop">
+    <div class="modal">
+      <h3 style="margin-top:0">Edit Employee</h3>
+      <form id="edit-form">
+        <input type="hidden" id="edit-id" />
+        <div style="margin-bottom:10px">
+          <label for="edit-name">Name</label>
+          <input id="edit-name" required />
+          <div class="error" id="edit-name-error"></div>
+        </div>
+        <div style="margin-bottom:10px">
+          <label for="edit-email">Email</label>
+          <input id="edit-email" type="email" required />
+          <div class="error" id="edit-email-error"></div>
+        </div>
+        <div style="margin-bottom:10px">
+          <label for="edit-position">Position</label>
+          <input id="edit-position" required />
+          <div class="error" id="edit-position-error"></div>
+        </div>
+        <div style="display:flex; gap:8px; justify-content:flex-end;">
+          <button type="button" id="edit-cancel">Cancel</button>
+          <button class="primary" type="submit">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
+

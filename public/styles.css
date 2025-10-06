@@ -1,0 +1,26 @@
+:root { --bg: #0b1020; --panel: #121a33; --text: #e6e9f2; --muted:#98a2b3; --primary:#7c5cff; --danger:#ef4444; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: linear-gradient(180deg, #0b1020, #0e1630 35%, #0b1020); color: var(--text); min-height: 100vh; }
+.container { max-width: 980px; margin: 32px auto; padding: 0 16px; }
+header { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+h1 { margin: 0; font-size: 24px; letter-spacing: 0.4px; }
+.panel { background: rgba(18,26,51,0.7); border:1px solid rgba(124,92,255,0.15); backdrop-filter: blur(10px); border-radius: 12px; padding: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+.grid { display:grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 900px) { .grid { grid-template-columns: 360px 1fr; } }
+label { display:block; font-size:12px; color: var(--muted); margin-bottom:6px; }
+input, select { width:100%; padding:10px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.12); background:#0f1731; color:var(--text); outline:none; }
+input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(124,92,255,0.2); }
+button { appearance:none; border:1px solid rgba(255,255,255,0.14); background:#0f1731; color:var(--text); padding:10px 14px; border-radius:8px; cursor:pointer; transition: .15s ease; }
+button.primary { background: linear-gradient(135deg, #7c5cff, #5a39ff); border-color: rgba(124,92,255,0.6); }
+button:hover { transform: translateY(-1px); }
+.toolbar { display:flex; gap:8px; align-items:center; }
+table { width:100%; border-collapse: collapse; }
+th, td { text-align:left; padding:12px; border-bottom:1px solid rgba(255,255,255,0.08); font-size:14px; }
+th { color: var(--muted); font-weight:500; }
+.actions { display:flex; gap:8px; }
+.error { color: #ff9aa2; font-size: 12px; margin-top:6px; }
+.muted { color: var(--muted); }
+.modal-backdrop { position:fixed; inset:0; background: rgba(0,0,0,0.5); display:none; align-items:center; justify-content:center; padding:16px; }
+.modal { background:#0f1731; border:1px solid rgba(255,255,255,0.12); border-radius:12px; max-width:520px; width:100%; padding:16px; }
+.hidden { display:none; }
+
